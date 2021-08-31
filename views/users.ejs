@@ -1,0 +1,19 @@
+<%- include("./partials/head.ejs") %>
+<%- include("./homepage.ejs") %>
+    <!--====form section start====-->
+    <div class="container">
+        <div class="user-detail">
+            <h2>Create User Data</h2>
+            <form action="/users/create" method="POST">
+                <label class="form-label" >Full Name</label>
+                <input class="form-control" type="text" placeholder="Enter Full Name" name="f_name" required>
+                <label class="form-label">Email Address</label>
+                <input class="form-control" type="email" placeholder="Enter Email Address" name="email" required>
+                <label class="form-label"></label>City</label>
+                <input class="form-control" type="text" placeholder="Enter Full Country" name="country" required>
+                <button class="btn btn-primary" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+<%- include("./partials/foot.ejs") %>  

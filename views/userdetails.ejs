@@ -1,0 +1,36 @@
+<%- include("./partials/head.ejs") %>
+
+    <%- include("./homepage.ejs") %>
+    <!--====form section start====-->
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (users.length > 0) { %>
+                        <% users.forEach(user => { %>
+                            <tr>
+                                <th scope="row"><%= user.name %></th>
+                                <td class="snippet"><%= user.email %></td>
+                                <td class="snippet"><%= user.city %></td>
+                                <td class="snippet"><a href="/users/edit/<%=user.id%>">Edit</a></td>
+                                <td class="snippet"><a href="/users/delete/<%=user.id%>">Delete</a></td>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+      <% } else { %>
+        <p>There are no blogs to display...</p>
+      <% } %>
+
+<%- include("./partials/foot.ejs") %>  
